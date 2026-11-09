@@ -5,18 +5,18 @@
 <style>
 /* Layout: a single scrolling card. Centered 34rem column on phones, cards sit side by side from 760px up. */
 :root{
-  --blush:#f9d0d8;
-  --blush-deep:#f08fa8;
-  --ivory:#fff7f6;
-  --beige:#f8e0cc;
-  --gold:#d3a043;
-  --gold-deep:#8c5b1c;
-  --rose:#c74a72;
-  --rose-deep:#a93a5e;
-  --lav:#cdbdf0;
-  --mint:#bde6d3;
+  --blush:#fff0a6;
+  --blush-deep:#f7c935;
+  --ivory:#fffef6;
+  --beige:#fbeed0;
+  --gold:#e0a81f;
+  --gold-deep:#7a5a10;
+  --rose:#3a7d4b;
+  --rose-deep:#2c6039;
+  --lav:#d6ecb4;
+  --mint:#bfe3c0;
   --sky:#bfe0f5;
-  --peach:#fcd2b8;
+  --peach:#ffd9a8;
   --ink:#5a4744;
   --ink-soft:#7d6863;
   --pearl:#f3ece4;
@@ -58,8 +58,8 @@ a{color:inherit}
 .flourish::before,.flourish::after{content:"";height:1px;width:min(5rem,22vw);background:linear-gradient(90deg,transparent,var(--gold))}
 .flourish::after{transform:scaleX(-1)}
 .flourish svg{width:1.6rem;height:1.6rem}
-.fl-petal{fill:var(--blush-deep);opacity:.95}
-.fl-core{fill:var(--gold)}
+.fl-petal{fill:#fff;stroke:#e3c670;stroke-width:.55}
+.fl-core{fill:#f7c935;stroke:#d99a14;stroke-width:.6}
 
 /* floating butterflies */
 .flutter{position:fixed;inset:0;z-index:2;pointer-events:none;overflow:hidden}
@@ -81,12 +81,13 @@ a{color:inherit}
 .hero .c2{bottom:1rem;right:-2.5rem;transform:rotate(40deg)}
 .hero .c3{top:30%;right:-3.5rem;width:6rem;height:6rem;opacity:.35}
 .wings{width:min(19rem,82%);height:auto;margin-bottom:.4rem}
-.wing .f{fill:var(--blush-deep);stroke:var(--gold);stroke-width:.9}
-.wing .f2{fill:var(--lav);stroke:var(--gold);stroke-width:.9}
+.wing .f{fill:#fff;stroke:var(--gold);stroke-width:.9}
+.wing .f2{fill:var(--blush);stroke:var(--gold);stroke-width:.9}
 .halo{fill:none;stroke:var(--gold);stroke-width:2.2}
 .kicker{font-size:clamp(2rem,9vw,2.9rem)}
 .one{font-family:var(--serif);font-weight:600;font-size:clamp(4.2rem,22vw,7.5rem);letter-spacing:.14em;padding-left:.14em;line-height:1;color:var(--rose);margin-top:.1rem;
   background:linear-gradient(100deg,var(--rose) 0%,var(--gold) 50%,#8f6fd1 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.one{background-image:linear-gradient(100deg,#3f9a56 0%,#e0a81f 50%,#e8832e 100%)}
 .baby{font-size:clamp(3rem,15vw,5.6rem);margin-top:.2rem}
 .hero .sub{font-family:var(--serif);font-style:italic;font-size:clamp(1.15rem,4.4vw,1.45rem);max-width:26rem;margin:1.1rem auto 0;color:var(--ink-soft)}
 .photo{display:block;margin-inline:auto;margin-top:.6rem;width:min(11rem,48vw);aspect-ratio:1;border-radius:50%;object-fit:cover;border:4px solid var(--ivory);box-shadow:0 0 0 1.5px var(--gold),0 14px 34px rgba(143,111,51,.2);margin-bottom:1rem}
@@ -123,8 +124,8 @@ a{color:inherit}
   box-shadow:0 18px 40px -22px rgba(143,111,51,.5);
 }
 .card::before{content:"";position:absolute;inset:6px;border:1px solid var(--blush-deep);border-radius:1.05rem;opacity:.7;pointer-events:none}
-#cardBaptism{background:linear-gradient(180deg,rgba(205,189,240,.55),var(--card) 62%)}
-#cardParty{background:linear-gradient(180deg,rgba(252,210,184,.65),var(--card) 62%)}
+#cardBaptism{background:linear-gradient(180deg,rgba(191,224,245,.65),var(--card) 62%)}
+#cardParty{background:linear-gradient(180deg,rgba(255,240,166,.8),var(--card) 62%)}
 .card .ico{width:3rem;height:3rem;margin:0 auto .5rem;display:block}
 .card h3{font-family:var(--script);font-size:2.3rem;font-weight:400;color:var(--rose);line-height:1.1}
 .card dl{margin:1rem 0 1.4rem;display:grid;gap:.85rem}
@@ -291,14 +292,23 @@ html.js .cover{display:flex}
   <defs>
     <symbol id="flower" viewBox="-20 -20 40 40">
       <g class="fl-petal">
-        <ellipse cx="0" cy="-9" rx="5.2" ry="9"/>
-        <ellipse cx="0" cy="-9" rx="5.2" ry="9" transform="rotate(60)"/>
-        <ellipse cx="0" cy="-9" rx="5.2" ry="9" transform="rotate(120)"/>
-        <ellipse cx="0" cy="-9" rx="5.2" ry="9" transform="rotate(180)"/>
-        <ellipse cx="0" cy="-9" rx="5.2" ry="9" transform="rotate(240)"/>
-        <ellipse cx="0" cy="-9" rx="5.2" ry="9" transform="rotate(300)"/>
+        <ellipse cx="0" cy="-11.5" rx="2.7" ry="8" transform="rotate(0.0)"/>
+        <ellipse cx="0" cy="-11.5" rx="2.7" ry="8" transform="rotate(25.71)"/>
+        <ellipse cx="0" cy="-11.5" rx="2.7" ry="8" transform="rotate(51.43)"/>
+        <ellipse cx="0" cy="-11.5" rx="2.7" ry="8" transform="rotate(77.14)"/>
+        <ellipse cx="0" cy="-11.5" rx="2.7" ry="8" transform="rotate(102.86)"/>
+        <ellipse cx="0" cy="-11.5" rx="2.7" ry="8" transform="rotate(128.57)"/>
+        <ellipse cx="0" cy="-11.5" rx="2.7" ry="8" transform="rotate(154.29)"/>
+        <ellipse cx="0" cy="-11.5" rx="2.7" ry="8" transform="rotate(180.0)"/>
+        <ellipse cx="0" cy="-11.5" rx="2.7" ry="8" transform="rotate(205.71)"/>
+        <ellipse cx="0" cy="-11.5" rx="2.7" ry="8" transform="rotate(231.43)"/>
+        <ellipse cx="0" cy="-11.5" rx="2.7" ry="8" transform="rotate(257.14)"/>
+        <ellipse cx="0" cy="-11.5" rx="2.7" ry="8" transform="rotate(282.86)"/>
+        <ellipse cx="0" cy="-11.5" rx="2.7" ry="8" transform="rotate(308.57)"/>
+        <ellipse cx="0" cy="-11.5" rx="2.7" ry="8" transform="rotate(334.29)"/>
       </g>
-      <circle class="fl-core" r="3.4"/>
+      <circle class="fl-core" r="4.6"/>
+      <circle cx="-1.4" cy="-1.4" r="1.3" fill="#fff3b0" opacity=".8"/>
     </symbol>
     <symbol id="butterfly" viewBox="0 0 40 32">
       <path class="w1" d="M20 16C15 1 2 1 4 12c1 6 10 8 16 4z"/>
@@ -306,6 +316,18 @@ html.js .cover{display:flex}
       <path class="w2" d="M20 16C14 20 6 24 10 29c4 3 9-5 10-13z"/>
       <path class="w2" d="M20 16C26 20 34 24 30 29c-4 3-9-5-10-13z"/>
       <path d="M20 10v14" stroke="#8f6f33" stroke-width="1.2" stroke-linecap="round" fill="none"/>
+    </symbol>
+    <symbol id="daisybunch" viewBox="0 0 300 130">
+      <g fill="none" stroke="#4f9a5c" stroke-width="3" stroke-linecap="round">
+        <path d="M150 130V92"/>
+        <path d="M150 130C140 118 112 112 96 98"/>
+        <path d="M150 130C162 118 192 112 207 98"/>
+      </g>
+      <path d="M149 118C128 120 110 110 104 96C126 96 142 104 149 118z" fill="#6cb87a" stroke="#4f9a5c" stroke-width="1"/>
+      <path d="M151 118C172 120 190 110 196 96C174 96 158 104 151 118z" fill="#6cb87a" stroke="#4f9a5c" stroke-width="1"/>
+      <use href="#flower" x="63" y="38" width="64" height="64"/>
+      <use href="#flower" x="179" y="44" width="56" height="56"/>
+      <use href="#flower" x="102" y="0" width="96" height="96"/>
     </symbol>
     <symbol id="wingpair" viewBox="0 0 300 130">
       <g class="wing">
@@ -355,7 +377,7 @@ html.js .cover{display:flex}
     <svg class="corner c1"><use href="#flower"/></svg>
     <svg class="corner c2"><use href="#flower"/></svg>
     <svg class="corner c3"><use href="#flower"/></svg>
-    <div class="in" style="--i:0" id="heroArt"><svg class="wings" viewBox="0 0 300 130" role="img" aria-label="Angel wings with a golden halo"><use href="#wingpair"/></svg></div>
+    <div class="in" style="--i:0" id="heroArt"><svg class="wings" viewBox="0 0 300 130" role="img" aria-label="A bunch of daisies"><use href="#daisybunch"/></svg></div>
     <p class="script kicker in" style="--i:1" id="heroKicker"></p>
     <p class="one in" style="--i:2" id="heroNumber"></p>
     <h1 class="script baby in" style="--i:3" id="babyName"></h1>
@@ -468,7 +490,7 @@ html.js .cover{display:flex}
       <p class="msg" id="closeMsg"></p>
       <p class="love">With love,</p>
       <p class="script family" id="family"></p>
-      <svg class="wings" viewBox="0 0 300 130" aria-hidden="true"><use href="#wingpair"/></svg>
+      <svg class="wings" viewBox="0 0 300 130" aria-hidden="true"><use href="#daisybunch"/></svg>
     </div>
   </section>
 
@@ -486,7 +508,7 @@ const CONFIG = {
   babyName: "Baby Jiana Oruga",
   coverTop: "You're Invited",          // small line above the envelope
   coverHint: "Tap the seal to open",   // line under the envelope
-  heroKicker: "A Little Angel is Turning",
+  heroKicker: "Our Little Daisy is Turning",
   heroNumber: "ONE",
   birthdayLabel: "1st Birthday",
   occasion: "Birthday & Christening",
@@ -544,7 +566,7 @@ const CONFIG = {
   // Slideshow of the celebrant's pictures. Each photo needs "src" (a data: image) and an optional caption.
   // The five entries below have an empty src, so the page shows pink TEST placeholders.
   // Add, remove or reorder entries freely.
-  galleryEyebrow: "Our little angel",
+  galleryEyebrow: "Our little daisy",
   galleryTitle: "Sweet Moments",
   slideSeconds: 4.5,                  // seconds per photo; use 0 to turn off auto-play
   photos: [
@@ -557,18 +579,18 @@ const CONFIG = {
 
   // Page colors
   colors: {
-    blush: "#f9d0d8",
-    blushDeep: "#f08fa8",
-    ivory: "#fff7f6",
-    beige: "#f8e0cc",
-    gold: "#d3a043",
-    goldDeep: "#8c5b1c",
-    rose: "#c74a72",
-    roseDeep: "#a93a5e",
-    lav: "#cdbdf0",
-    mint: "#bde6d3",
+    blush: "#fff0a6",        // butter yellow surfaces
+    blushDeep: "#f7c935",    // daisy yellow
+    ivory: "#fffef6",        // page background
+    beige: "#fbeed0",
+    gold: "#e0a81f",
+    goldDeep: "#7a5a10",     // small gold text
+    rose: "#3a7d4b",         // headings and buttons (daisy leaf green)
+    roseDeep: "#2c6039",
+    lav: "#d6ecb4",          // soft lime
+    mint: "#bfe3c0",
     sky: "#bfe0f5",
-    peach: "#fcd2b8",
+    peach: "#ffd9a8",
     ink: "#5a4744"
   }
 };
@@ -641,11 +663,11 @@ const CONFIG = {
 
   // butterflies
   var spots = [
-    { x:"8%",  y:"72%", s:"28px", d:"16s", l:"0s",   c1:"#f08fa8", c2:"#d3a043" },
-    { x:"84%", y:"64%", s:"22px", d:"19s", l:"-5s",  c1:"#a58be0", c2:"#f08fa8" },
-    { x:"70%", y:"88%", s:"32px", d:"22s", l:"-9s",  c1:"#6ec3a0", c2:"#d3a043" },
-    { x:"22%", y:"92%", s:"20px", d:"18s", l:"-3s",  c1:"#6cb4e4", c2:"#a58be0" },
-    { x:"46%", y:"80%", s:"24px", d:"24s", l:"-12s", c1:"#f5a26b", c2:"#f08fa8" }
+    { x:"8%",  y:"72%", s:"28px", d:"16s", l:"0s",   c1:"#f7c935", c2:"#e8832e" },
+    { x:"84%", y:"64%", s:"22px", d:"19s", l:"-5s",  c1:"#6cb4e4", c2:"#f7c935" },
+    { x:"70%", y:"88%", s:"32px", d:"22s", l:"-9s",  c1:"#6cb87a", c2:"#f7c935" },
+    { x:"22%", y:"92%", s:"20px", d:"18s", l:"-3s",  c1:"#f08fa8", c2:"#f7c935" },
+    { x:"46%", y:"80%", s:"24px", d:"24s", l:"-12s", c1:"#f5a26b", c2:"#fff0a6" }
   ];
   spots.forEach(function(p){
     var b = document.createElement("div"); b.className = "bf";
