@@ -432,34 +432,6 @@ body::after{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;back
 .fd{position:absolute;top:-34px;left:var(--px);width:var(--sz);opacity:.85;animation:fall var(--d) linear var(--l) infinite,spin 12s linear infinite}
 @media (prefers-reduced-motion:reduce){.pf,.fd,.message .rv::before,.message .rv::after,.closing .rv::before,.closing .rv::after{animation:none}}
 
-/* ===== Cover v2 (sun, balloons, bouquet envelope) ===== */
-.cover{background:radial-gradient(28rem 22rem at 0% 0%,rgba(247,201,53,.45),transparent 70%),radial-gradient(30rem 24rem at 100% 100%,rgba(191,224,245,.65),transparent 70%),linear-gradient(180deg,#fffdf4,#fff7dc)}
-.cv-flower,.cover-art{display:none}
-.cv-deco{position:absolute;inset:0;z-index:0;pointer-events:none;overflow:hidden}
-.cover>p,.cover>.env{position:relative;z-index:1}
-.cv-sun{position:absolute;top:-2.4rem;left:-2.6rem;width:min(15rem,46vw);height:auto;filter:drop-shadow(0 6px 10px rgba(224,168,31,.25))}
-.cv-balloons{position:absolute;top:1rem;right:.6rem;width:min(9.5rem,30vw);height:auto;animation:bob 6s ease-in-out infinite}
-@keyframes bob{50%{translate:0 -10px}}
-.cv-cl{position:absolute;bottom:-.6rem;width:min(14rem,44vw);height:auto;opacity:.95}
-.cv-cl.l{left:-1.5rem}.cv-cl.r{right:-1.5rem;transform:scaleX(-1)}
-.sp{position:absolute;width:var(--z);height:var(--z);left:var(--x);top:var(--y);animation:tw var(--t) ease-in-out var(--l) infinite}
-@keyframes tw{0%,100%{opacity:.2;scale:.6}50%{opacity:1;scale:1.15}}
-#coverTop{display:grid;justify-items:center;gap:0;line-height:.95;margin-top:0}
-#coverTop::before,#coverTop::after{display:none}
-#coverTop .t1{font-family:var(--script);font-size:clamp(3.6rem,15vw,5.2rem);color:#6aaad8;text-shadow:0 2px 0 #fff}
-#coverTop .t2{font-family:var(--serif);font-weight:600;font-size:clamp(2.6rem,11vw,3.7rem);color:#e0a81f;margin-top:-.3rem;translate:1.6rem 0;text-shadow:0 2px 0 #fff}
-.env{width:min(23rem,88vw,calc(44svh*1.45))}
-.env-back{background:#fffaea}
-.env-front i{background:linear-gradient(135deg,#fffbe9,#fff3c4)}
-.env-flap{background:linear-gradient(180deg,#fff6c9,#ffeb94)}
-.flap-art,.front-art{position:absolute;inset:0;width:100%;height:100%}
-.front-art{z-index:1}
-.env-seal{width:4.8rem;height:4.8rem;margin:-2.4rem 0 0 -2.4rem;background:radial-gradient(circle at 35% 30%,#ffe685,#f7c935 55%,#d99a14);box-shadow:0 8px 16px rgba(90,71,68,.35),inset 0 0 0 3px rgba(255,255,255,.35),inset 0 0 0 6px rgba(217,154,20,.55)}
-.env-seal svg{width:3.3rem;height:3.3rem}
-.cover-hint{font-family:var(--script);font-size:clamp(1.7rem,6vw,2.1rem);letter-spacing:0;text-transform:none;color:#6aaad8;background:none;border:0;box-shadow:none;padding:0;text-shadow:0 2px 0 #fff}
-@media (max-height:640px){.cv-balloons{width:6rem}.cv-cl{width:9rem}}
-@media (prefers-reduced-motion:reduce){.cv-balloons,.sp{animation:none}}
-
 /* ===== Scroll animation ===== */
 .sa{opacity:0;translate:0 28px;transition:opacity .8s ease var(--sd,0s),translate .9s cubic-bezier(.2,.7,.2,1) var(--sd,0s),scale .9s cubic-bezier(.2,.7,.2,1) var(--sd,0s),filter .9s ease var(--sd,0s)}
 .sa-l{translate:-38px 0}
@@ -469,6 +441,16 @@ body::after{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;back
 .sa.sa-on{opacity:1;translate:0 0;scale:1;filter:none}
 .card.sa{transition:opacity .8s ease var(--sd,0s),translate .9s cubic-bezier(.2,.7,.2,1) var(--sd,0s),transform .3s ease,box-shadow .3s ease}
 .scroll-bar{position:fixed;top:0;left:0;right:0;height:3px;z-index:60;transform-origin:0 50%;transform:scaleX(var(--p,0));background:linear-gradient(90deg,var(--mint),var(--blush-deep),var(--sky));pointer-events:none}
+
+/* ===== Cover: simple daisy envelope ===== */
+.cover-art,.cv-flower.c{display:none}
+.env{width:min(23rem,88vw,calc(44svh*1.45))}
+.env-back{background:#fbefd0;border-color:#d9b979}
+.env-front i{background:linear-gradient(135deg,#fffbe9,#f8ebc3)}
+.env-flap{background:linear-gradient(180deg,#fff6cc,#ffe98a)}
+.flap-art,.front-art{position:absolute;inset:0;width:100%;height:100%}
+.env-seal{width:4.4rem;height:4.4rem;margin:-2.2rem 0 0 -2.2rem;background:radial-gradient(circle at 35% 30%,#ffe685,#f7c935 55%,#d99a14);box-shadow:0 8px 16px rgba(90,71,68,.3),inset 0 0 0 3px rgba(255,255,255,.4)}
+.env-seal svg{width:3rem;height:3rem}
 </style>
 
 <!-- Shared drawings -->
@@ -555,15 +537,15 @@ body::after{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;back
   <button type="button" class="env" id="env" aria-label="Open the invitation">
     <span class="env-back"></span>
     <span class="env-card"><span class="eyebrow" id="cardTop"></span><span class="script" id="cardName"></span><span class="eyebrow" id="cardBot"></span></span>
-    <span class="env-front"><i class="l"></i><i class="r"></i><i class="b"></i><svg class="front-art" viewBox="0 0 290 200" aria-hidden="true"><g fill="#6cb87a"><ellipse cx="62" cy="150" rx="14" ry="3.6" transform="rotate(-35 62 150)"/><ellipse cx="228" cy="150" rx="14" ry="3.6" transform="rotate(35 228 150)"/><ellipse cx="96" cy="176" rx="11" ry="3" transform="rotate(20 96 176)"/><ellipse cx="194" cy="176" rx="11" ry="3" transform="rotate(-20 194 176)"/></g><use href="#flower" x="30" y="112" width="26" height="26"/><use href="#flower" x="234" y="112" width="26" height="26"/><use href="#flower" x="44" y="160" width="18" height="18"/><use href="#flower" x="228" y="160" width="18" height="18"/><use href="#flower" x="112" y="168" width="14" height="14"/><use href="#flower" x="164" y="168" width="14" height="14"/></svg></span>
-    <span class="env-flap"><svg class="flap-art" viewBox="0 0 234 100" aria-hidden="true"><polygon points="10,6 224,6 117,90" fill="none" stroke="#e0a81f" stroke-width="1.2" stroke-dasharray="3 3" opacity=".85"/><path d="M117 74C115 58 104 52 87 46M117 74C119 58 130 52 147 46M117 74V52" stroke="#4f9a5c" stroke-width="1.6" fill="none"/><g fill="#6cb87a"><ellipse cx="86" cy="36" rx="12" ry="3.6" transform="rotate(-40 86 36)"/><ellipse cx="148" cy="36" rx="12" ry="3.6" transform="rotate(40 148 36)"/></g><g fill="#8ec9ee"><ellipse cx="74" cy="24" rx="10" ry="3.2" transform="rotate(-62 74 24)"/><ellipse cx="160" cy="24" rx="10" ry="3.2" transform="rotate(62 160 24)"/></g><g fill="#c9b8e8"><circle cx="68" cy="14" r="2.4"/><circle cx="166" cy="14" r="2.4"/><circle cx="117" cy="9" r="2.4"/></g><use href="#flower" x="72" y="30" width="30" height="30"/><use href="#flower" x="132" y="30" width="30" height="30"/><use href="#flower" x="97" y="11" width="40" height="40"/></svg></span>
+    <span class="env-front"><i class="l"></i><i class="r"></i><i class="b"></i><svg class="front-art" viewBox="0 0 290 200" aria-hidden="true"><use href="#flower" x="36" y="132" width="24" height="24"/><use href="#flower" x="230" y="132" width="24" height="24"/><use href="#flower" x="62" y="160" width="15" height="15"/><use href="#flower" x="213" y="160" width="15" height="15"/></svg></span>
+    <span class="env-flap"><svg class="flap-art" viewBox="0 0 234 100" aria-hidden="true"><polygon points="10,6 224,6 117,90" fill="none" stroke="#d9a21d" stroke-width="1.2" stroke-dasharray="3 3" opacity=".8"/><path d="M117 76C115 60 104 54 90 48M117 76C119 60 130 54 144 48M117 76V54" stroke="#4f9a5c" stroke-width="1.6" fill="none"/><g fill="#6cb87a"><ellipse cx="88" cy="38" rx="11" ry="3.4" transform="rotate(-40 88 38)"/><ellipse cx="146" cy="38" rx="11" ry="3.4" transform="rotate(40 146 38)"/></g><use href="#flower" x="76" y="32" width="28" height="28"/><use href="#flower" x="130" y="32" width="28" height="28"/><use href="#flower" x="98" y="12" width="38" height="38"/></svg></span>
     <span class="env-seal"><svg aria-hidden="true"><use href="#flower"/></svg></span>
   </button>
   <div class="cover-art" aria-hidden="true">
     <svg class="cover-daisies" viewBox="0 0 300 130"><use href="#daisybunch"/></svg>
     <div class="pearls"></div>
   </div>
-  <div class="cv-deco" id="cvDeco" aria-hidden="true"><svg class="cv-sun" viewBox="0 0 240 210"><defs><radialGradient id="gS" cx=".4" cy=".35"><stop offset="0" stop-color="#fff3a0"/><stop offset="1" stop-color="#f7c935"/></radialGradient><linearGradient id="gCl" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff"/><stop offset="1" stop-color="#cfe8f8"/></linearGradient><linearGradient id="gPe" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff"/><stop offset="1" stop-color="#ffd9a8"/></linearGradient><linearGradient id="gLv" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff"/><stop offset="1" stop-color="#e4e6ff"/></linearGradient></defs><g stroke="#f7c935" stroke-width="8" stroke-linecap="round" opacity=".85"><line x1='138.0' y1='78.0' x2='162.0' y2='78.0'/><line x1='130.0' y1='108.0' x2='143.8' y2='116.0'/><line x1='108.0' y1='130.0' x2='120.0' y2='150.7'/><line x1='78.0' y1='138.0' x2='78.0' y2='154.0'/><line x1='48.0' y1='130.0' x2='36.0' y2='150.7'/><line x1='26.0' y1='108.0' x2='12.2' y2='116.0'/><line x1='18.0' y1='78.0' x2='-6.0' y2='78.0'/><line x1='26.0' y1='48.0' x2='12.2' y2='40.0'/><line x1='48.0' y1='26.0' x2='36.0' y2='5.3'/><line x1='78.0' y1='18.0' x2='78.0' y2='2.0'/><line x1='108.0' y1='26.0' x2='120.0' y2='5.3'/><line x1='130.0' y1='48.0' x2='143.8' y2='40.0'/></g><circle cx="78" cy="78" r="46" fill="url(#gS)"/><g fill="url(#gCl)" stroke="#a9d3ee" stroke-opacity=".55" stroke-width="1.2"><circle cx='34.0' cy='168.0' r='21.6'/><circle cx='60.4' cy='151.2' r='28.8'/><circle cx='91.6' cy='163.2' r='24.0'/><circle cx='115.6' cy='174.0' r='16.8'/><rect x='14.8' y='168.0' width='117.6' height='24.0' rx='12.0'/></g><g fill="url(#gCl)" stroke="#a9d3ee" stroke-opacity=".55" stroke-width="1.2"><circle cx='120.0' cy='176.0' r='18.0'/><circle cx='142.0' cy='162.0' r='24.0'/><circle cx='168.0' cy='172.0' r='20.0'/><circle cx='188.0' cy='181.0' r='14.0'/><rect x='104.0' y='176.0' width='98.0' height='20.0' rx='10.0'/></g></svg><svg class="cv-balloons" viewBox="0 0 150 200"><g fill="none" stroke="#b9a28a" stroke-width="1"><path d="M92 79Q84 110 75 138"/><path d="M52 96Q62 118 75 138"/><path d="M104 120Q92 130 75 138"/></g><ellipse cx="92" cy="48" rx="25" ry="30" fill="#8ec9ee"/><ellipse cx="82" cy="36" rx="6" ry="10" fill="#fff" opacity=".55"/><path d="M88 83h8l-4 -7z" fill="#8ec9ee"/><ellipse cx="52" cy="64" rx="26" ry="31" fill="#f4a9bd"/><ellipse cx="42" cy="52" rx="6" ry="10" fill="#fff" opacity=".55"/><path d="M48 100h8l-4 -7z" fill="#f4a9bd"/><ellipse cx="104" cy="90" rx="24" ry="29" fill="#f7c935"/><ellipse cx="94" cy="78" rx="5" ry="9" fill="#fff" opacity=".55"/><path d="M100 124h8l-4 -7z" fill="#f7c935"/><g fill="url(#gPe)" stroke="#a9d3ee" stroke-opacity=".55" stroke-width="1.2"><circle cx='48.0' cy='162.0' r='16.2'/><circle cx='67.8' cy='149.4' r='21.6'/><circle cx='91.2' cy='158.4' r='18.0'/><circle cx='109.2' cy='166.5' r='12.6'/><rect x='33.6' y='162.0' width='88.2' height='18.0' rx='9.0'/></g></svg><svg class="cv-cl l" viewBox="0 0 220 110"><g fill="url(#gLv)" stroke="#a9d3ee" stroke-opacity=".55" stroke-width="1.2"><circle cx='25.0' cy='66.0' r='27.0'/><circle cx='58.0' cy='45.0' r='36.0'/><circle cx='97.0' cy='60.0' r='30.0'/><circle cx='127.0' cy='73.5' r='21.0'/><rect x='1.0' y='66.0' width='147.0' height='30.0' rx='15.0'/></g><g fill="url(#gLv)" stroke="#a9d3ee" stroke-opacity=".55" stroke-width="1.2"><circle cx='114.0' cy='76.0' r='21.6'/><circle cx='140.4' cy='59.2' r='28.8'/><circle cx='171.6' cy='71.2' r='24.0'/><circle cx='195.6' cy='82.0' r='16.8'/><rect x='94.8' y='76.0' width='117.6' height='24.0' rx='12.0'/></g></svg><svg class="cv-cl r" viewBox="0 0 220 110"><g fill="url(#gLv)" stroke="#a9d3ee" stroke-opacity=".55" stroke-width="1.2"><circle cx='25.0' cy='66.0' r='27.0'/><circle cx='58.0' cy='45.0' r='36.0'/><circle cx='97.0' cy='60.0' r='30.0'/><circle cx='127.0' cy='73.5' r='21.0'/><rect x='1.0' y='66.0' width='147.0' height='30.0' rx='15.0'/></g><g fill="url(#gLv)" stroke="#a9d3ee" stroke-opacity=".55" stroke-width="1.2"><circle cx='114.0' cy='76.0' r='21.6'/><circle cx='140.4' cy='59.2' r='28.8'/><circle cx='171.6' cy='71.2' r='24.0'/><circle cx='195.6' cy='82.0' r='16.8'/><rect x='94.8' y='76.0' width='117.6' height='24.0' rx='12.0'/></g></svg></div><svg class="cv-flower a" aria-hidden="true"><use href="#flower"/></svg>
+  <svg class="cv-flower a" aria-hidden="true"><use href="#flower"/></svg>
   <svg class="cv-flower b" aria-hidden="true"><use href="#flower"/></svg>
   <svg class="cv-flower c" aria-hidden="true"><use href="#flower"/></svg>
   <p class="eyebrow cover-hint" id="coverHint"></p>
@@ -1047,7 +1029,7 @@ const CONFIG = {
   }
 
   // opening envelope
-  $("coverTop").innerHTML = '<span class="t1">You\u2019re</span><span class="t2">Invited!</span>';
+  $("coverTop").textContent = C.coverTop;
   $("coverHint").textContent = C.coverHint;
   $("cardTop").textContent = C.birthdayLabel;
   $("cardName").textContent = C.babyName.replace(/^Baby\s+/i, "");
@@ -1219,19 +1201,6 @@ const CONFIG = {
       d.style.setProperty("--px",(8+i*13)+"%"); d.style.setProperty("--sz",(16+(i%3)*5)+"px");
       d.style.setProperty("--d",(19+(i*5)%9)+"s"); d.style.setProperty("--l","-"+((i*4)%15)+"s"); d.style.setProperty("--sw",(i%2?50:-50)+"px");
       fl.appendChild(d); }
-  }
-})();
-</script>
-<script>
-(function(){
-  var d=document.getElementById("cvDeco"); if(!d) return;
-  for(var i=0;i<22;i++){
-    var s=document.createElementNS("http://www.w3.org/2000/svg","svg");
-    s.setAttribute("class","sp"); s.setAttribute("viewBox","-10 -10 20 20");
-    s.innerHTML='<path d="M0-10Q1-1 10 0Q1 1 0 10Q-1 1-10 0Q-1-1 0-10z" fill="'+(i%3?"#e0a81f":"#f4a9bd")+'"/>';
-    s.style.setProperty("--x",((i*37)%96+2)+"%"); s.style.setProperty("--y",((i*53)%90+4)+"%");
-    s.style.setProperty("--z",(8+(i%4)*4)+"px"); s.style.setProperty("--t",(2.4+(i%5)*.6)+"s"); s.style.setProperty("--l","-"+((i*7)%9)/3+"s");
-    d.appendChild(s);
   }
 })();
 </script>
